@@ -5,3 +5,5 @@ notes. It uses only the Python standard library. Run the tests with
 `python -m unittest` from the repository root. Please do not add third-party
 dependencies; this tool is meant to run anywhere a plain Python install is
 available.
+
+The team runs `python snippets.py sync` once a week to publish the shared set.
