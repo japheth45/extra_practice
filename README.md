@@ -1,6 +1,16 @@
 # Wordie
 
-Wordie is a small command-line helper for Wordle-style five-letter word games. You tell it what you guessed and what the game showed, and it tells you which words are still possible. I wrote it to beat the rest of the team in our daily game chat. Now that everyone has a copy, nobody can call it cheating.
+Wordie is a small command-line helper for Wordle-style five-letter word games. You tell it what you guessed and what the game showed, and it tells you which words are still possible and which one to try next. I wrote it to beat the rest of the team in our daily game chat. Now that everyone has a copy, nobody can call it cheating.
+
+## Running it
+
+Wordie needs Python 3 and nothing else.
+
+    python wordie.py suggest
+    python wordie.py suggest SLATE=BBGBG
+    python wordie.py suggest SLATE=BBGBG CRANE=BGGBG
+
+With no arguments, `suggest` ranks the whole list and proposes an opening word. Each `GUESS=PATTERN` pair narrows the list down. Suggestions come from letter frequencies over the words that are still possible: words made of the most common remaining letters rank first.
 
 ## The pattern letters
 
