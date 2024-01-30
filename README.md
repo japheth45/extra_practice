@@ -12,6 +12,14 @@ Wordie needs Python 3 and nothing else.
 
 With no arguments, `suggest` ranks the whole list and proposes an opening word. Each `GUESS=PATTERN` pair narrows the list down. Suggestions come from letter frequencies over the words that are still possible: words made of the most common remaining letters rank first.
 
+    python wordie.py score SLATE CRANE
+
+`score` prints the pattern Wordie would compute for a guess against a known answer (here `BBGBG`), which is handy for checking the tool after a game.
+
+    python wordie.py play
+
+`play` walks through a game one guess at a time: type the guess, type the pattern, and Wordie shows how many words are still possible and what to try next. Press Enter on an empty guess to stop.
+
 ## The pattern letters
 
 After each guess the game colors the five letters. Wordie reads that as five letters typed on the keyboard:
