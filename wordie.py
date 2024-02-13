@@ -44,6 +44,8 @@ def narrow(words, pairs):
 
 def summary(words):
     """One line: how many words are still possible and what to guess next."""
+    if not words:
+        return "No candidates remain. Check the guesses and patterns you entered."
     best = suggest(words)[0].upper()
     noun = "candidate remains" if len(words) == 1 else "candidates remain"
     return f"{len(words)} {noun}. Suggested guess: {best}"
@@ -68,6 +70,8 @@ def cmd_play(args):
     guesses = 0
     while True:
         print(summary(words))
+        if not words:
+            return
         guess_text = input("Guess: ")
         if not guess_text.strip():
             return
